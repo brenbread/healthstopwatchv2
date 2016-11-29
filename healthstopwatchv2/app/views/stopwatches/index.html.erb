@@ -1,4 +1,24 @@
-<div class="panel panel-default">
-<div class="panel-heading"><h1>Stopwatch</h1></div>
-<a class="btn btn-default" href="/stopwatches/create" role="button">Create Stopwatch</a>
-<a class="btn btn-default" href="/home/index" role="button">Back</a>
+<head>
+  <link rel="stylesheet" href="/vendor/assets/stylesheets/flipclock.css">
+</head>
+<body>
+    <div class="panel panel-default">
+    <div class="panel-heading"><h1>Stopwatch</h1></div>
+    <h2>Current Watch: </h2>
+    <br>
+    <p><div class="test-clock">
+
+    <script type="text/javascript">
+	var clock = $('.test-clock').FlipClock(30, {
+    countdown: true,
+		clockFace: 'MinuteCounter',
+	});
+
+
+</script>
+</div></p>
+    <script src="/vendor/assets/javascripts/libs/jquery.js"></script>
+		<script src="/vendor/assets/javascripts/flipclock/flipclock.min.js"></script>
+    <a class="btn btn-default" href="/stopwatches/create" role="button">Create Stopwatch</a>
+    <a class="btn btn-default" href="/home/index" role="button">Back</a>
+</body>
