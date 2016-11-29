@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+<div class="panel-heading"><h3 id="notice"><%= notice %></h3></div>
+<p>
+  <strong>Name:</strong>
+  <%= @medicine.Name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @medicine.time %>
+</p>
+
+<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
+<a class="btn btn-default" href="/medicines/" role="button">Back</a>

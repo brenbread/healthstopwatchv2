@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+<div class="panel-heading"><h1>Medicine List</h1></div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicines.each do |medicine| %>
+      <tr>
+        <td><%= medicine.Name %></td>
+        <td><%= medicine.time %></td>
+        <td><%= link_to 'Show', medicine %></td>
+        <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
+        <td><%= link_to 'Delete', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<a class="btn btn-default" href="/medicines/new" role="button">Add Medicine</a>
+<a class="btn btn-default" href="/home/index" role="button">Back</a>
