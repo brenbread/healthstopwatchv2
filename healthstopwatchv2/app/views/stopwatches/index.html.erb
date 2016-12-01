@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="/vendor/assets/stylesheets/flipclock.css">
+  <%= include_gon %>
 </head>
 <body>
     <div class="panel panel-default">
@@ -9,7 +10,8 @@
     <p><div class="test-clock">
 
     <script type="text/javascript">
-	var clock = $('.test-clock').FlipClock(30, {
+
+	var clock = $('.test-clock').FlipClock(gon.myNum, {
     countdown: true,
 		clockFace: 'MinuteCounter',
 	});
