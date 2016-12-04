@@ -1,5 +1,6 @@
 class StopwatchesController < ApplicationController
   def index
-    gon.myNum = 3600
+    my_var = 0
+    gon.myNum = my_var
   end
 end
