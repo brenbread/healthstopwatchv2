@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicine:</strong>
+  <%= @stopwatch.medicine %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @stopwatch.time %>
+</p>
+
+<%= link_to 'Edit', edit_stopwatch_path(@stopwatch) %> |
+<%= link_to 'Back', stopwatches_path %>

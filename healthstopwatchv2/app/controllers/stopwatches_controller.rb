@@ -1,20 +1,36 @@
 class StopwatchesController < ApplicationController
   before_action :set_stopwatch, only: [:show, :edit, :update, :destroy]
-  def index
-    @my_var = 0
-    gon.myNum = @my_var
-  end
 
+  # GET /stopwatches
+  # GET /stopwatches.json
+  def index
+   @string1 = "Timer 1"
+   @string2 = "Timer 2"
+   @string3 = "Timer 3"
+   @time_1 = 0
+   @time_2 = 0
+   @time_3 = 0
+   gon.myNum1 = @time_1
+   gon.myNum2 = @time_2
+   gon.myNum3 = @time_3
+ end
+
+  # GET /stopwatches/1
+  # GET /stopwatches/1.json
   def show
   end
 
+  # GET /stopwatches/new
   def new
     @stopwatch = Stopwatch.new
   end
 
+  # GET /stopwatches/1/edit
   def edit
   end
 
+  # POST /stopwatches
+  # POST /stopwatches.json
   def create
     @stopwatch = Stopwatch.new(stopwatch_params)
 
@@ -29,6 +45,8 @@ class StopwatchesController < ApplicationController
     end
   end
 
+  # PATCH/PUT /stopwatches/1
+  # PATCH/PUT /stopwatches/1.json
   def update
     respond_to do |format|
       if @stopwatch.update(stopwatch_params)
@@ -41,6 +59,8 @@ class StopwatchesController < ApplicationController
     end
   end
 
+  # DELETE /stopwatches/1
+  # DELETE /stopwatches/1.json
   def destroy
     @stopwatch.destroy
     respond_to do |format|
@@ -55,8 +75,8 @@ class StopwatchesController < ApplicationController
       @stopwatch = Stopwatch.find(params[:id])
     end
 
-  def stopwatch_params
-    params.require(:stopwatch).permit(:time)
-  end
-
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def stopwatch_params
+      params.require(:stopwatch).permit(:medicine, :time)
+    end
 end

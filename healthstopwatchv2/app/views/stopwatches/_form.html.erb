@@ -1,7 +1,26 @@
-<%= form_for @my_var do |f| %>
+<%= form_for(@stopwatch) do |f| %>
+  <% if @stopwatch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stopwatch.errors.count, "error") %> prohibited this stopwatch from being saved:</h2>
 
+      <ul>
+      <% @stopwatch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-</form>
-
-
+  <div class="field">
+    <%= f.label :medicine %><br>
+    <%= f.text_field :medicine %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.number_field :time %>
+  <%  @time_1 = :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

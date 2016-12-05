@@ -5,22 +5,38 @@
 <body>
     <div class="panel panel-default">
     <div class="panel-heading"><h1>Stopwatch</h1></div>
-    <h2>Current Watch: </h2>
     <br>
-    <p><div class="test-clock">
 
-    <script type="text/javascript">
-
-	var clock = $('.test-clock').FlipClock(gon.myNum, {
+  <h4><%= @string1 %></h4><br>
+  <div class="clock_1">
+  <script type="text/javascript">
+    var clock = $('.clock_1').FlipClock(gon.myNum1, {
     countdown: true,
-		clockFace: 'MinuteCounter',
-	});
+        clockFace: 'MinuteCounter',
+    });
+</script></div><br>
 
+<h4><%= @string2 %></h4><br>
+<div class="clock_2">
+<script type="text/javascript">
+var clock = $('.clock_2').FlipClock(gon.myNum2, {
+countdown: true,
+clockFace: 'MinuteCounter',
+});
+</script></div><br>
 
-</script>
+<h4><%= @string3 %></h4><br>
+<div class="clock_3">
+<script type="text/javascript">
+var clock = $('.clock_3').FlipClock(gon.myNum3, {
+countdown: true,
+clockFace: 'MinuteCounter',
+});
+</script></div>
+
 </div></p>
     <script src="/vendor/assets/javascripts/libs/jquery.js"></script>
-		<script src="/vendor/assets/javascripts/flipclock/flipclock.min.js"></script>
-    <a class="btn btn-default" href="/stopwatches/new" role="button">Create Stopwatch</a>
+        <script src="/vendor/assets/javascripts/flipclock/flipclock.min.js"></script>
+    <a class="btn btn-default" href="/stopwatches/new" role="button">Edit Stopwatches</a>
     <a class="btn btn-default" href="/home/index" role="button">Back</a>
 </body>
