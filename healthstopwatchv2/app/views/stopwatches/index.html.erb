@@ -1,69 +1,70 @@
 <head>
   <link rel="stylesheet" href="/vendor/assets/stylesheets/flipclock.css">
-  <%= include_gon %>
+
+  <%= include_gon(watch: true) %>
 </head>
 <body>
     <div class="panel panel-default">
     <div class="panel-heading"><h1>Stopwatch</h1></div>
     <br>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Time</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Time</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-      <tbody>
-        <% @medicines.each do |medicine| %>
-          <tr>
-            <td><%= medicine.Name %></td>
-            <td><%= medicine.time %></td>
-            <td><%= link_to '1' %></td>
-              <% if '1'
-                @string1 = medicine.Name
-              end %>
-            <td><%= link_to '2' %></td>
-            <% if '2'
-              @string2 = medicine.Name
-            end %>
-            <td><%= link_to '3' %></td>
-            <% if '3'
-              @string3 = medicine.Name
-            end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <tbody>
+            <% @medicines.each do |medicine| %>
+              <tr>
+                <td><%= medicine.Name %></td>
+                <td><%= medicine.time %></td>
+                <td><%= button_to '1' %></td>
+                <td><%= button_to '1' %></td>
+                <td><%= button_to '3' %>  </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <h4><%= @string1 %></h4><br>
-  <div class="clock_1">
+
+    <h4><%= @string1 %></h4><br>
+    <div class="clock_1">
+    <script type="text/javascript">
+      var clock = $('.clock_1').FlipClock(gon.time1, {
+      countdown: true,
+          clockFace: 'MinuteCounter',
+      });
+
+  </script></div><br>
+
+  <h4><%= @string2 %></h4><br>
+  <div class="clock_2">
   <script type="text/javascript">
-    var clock = $('.clock_1').FlipClock(gon.myNum1, {
-    countdown: true,
-        clockFace: 'MinuteCounter',
-    });
-</script></div><br>
+  var clock = $('.clock_2').FlipClock(gon.time2, {
+  countdown: true,
+  clockFace: 'MinuteCounter',
+  });
 
-<h4><%= @string2 %></h4><br>
-<div class="clock_2">
-<script type="text/javascript">
-var clock = $('.clock_2').FlipClock(gon.myNum2, {
-countdown: true,
-clockFace: 'MinuteCounter',
-});
-</script></div><br>
+  </script></div><br>
 
-<h4><%= @string3 %></h4><br>
-<div class="clock_3">
-<script type="text/javascript">
-var clock = $('.clock_3').FlipClock(gon.myNum3, {
-countdown: true,
-clockFace: 'MinuteCounter',
-});
-</script></div>
+  <h4><%= @string3 %></h4><br>
+  <div class="clock_3">
+  <script type="text/javascript">
+  var clock = $('.clock_3').FlipClock(gon.time3, {
+  countdown: true,
+  clockFace: 'MinuteCounter',
+  });
+
+  </script></div>
+
+  <script type="text/javascript">
+
+  </script></div><br>
+
 
 </div></p>
     <script src="/vendor/assets/javascripts/libs/jquery.js"></script>
