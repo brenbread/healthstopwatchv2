@@ -5,9 +5,9 @@ class StopwatchesController < ApplicationController
   # GET /stopwatches.json
   def index
   @medicines = Medicine.all
-   @string1 = "Timer 1"
-   @string2 = "Timer 2"
-   @string3 = "Timer 3"
+   @string1 = "Hydromorphine 2 mg"
+   @string2 = "Oxycodone 5 mg"
+   @string3 = "Tramadol 50 mg"
    @time_1 = 0
    @time_2 = 0
    @time_3 = 0
@@ -15,6 +15,18 @@ class StopwatchesController < ApplicationController
    gon.myNum2 = @time_2
    gon.myNum3 = @time_3
  end
+
+ def change_watch1
+   @string1 = "Watch Changed"
+
+ end
+
+ def change_watch2
+ end
+
+ def change_watch3
+ end
+
 
 
   # GET /stopwatches/1

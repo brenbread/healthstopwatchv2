@@ -12,62 +12,136 @@
         <tr>
           <th>Name</th>
           <th>Time</th>
+
           <th colspan="3"></th>
         </tr>
       </thead>
-
       <tbody>
-        <% @medicines.each do |medicine| %>
           <tr>
-            <td><%= medicine.Name %></td>
-            <td><%= medicine.time %></td>
-            <td><%= link_to '1' %></td>
-              <% if '1'
-                @string1 = medicine.Name
-              end %>
-            <td><%= link_to '2' %></td>
-            <% if '2'
-              @string2 = medicine.Name
-            end %>
-            <td><%= link_to '3' %></td>
-            <% if '3'
-              @string3 = medicine.Name
-            end %>
+            <td>Hydromorphine 2 mg </td>
+            <td>60</td>
+            <th><button class="start1 btn btn-default">Start</button>
+            <button class="stop1 btn btn-default">Stop</button>
+            <button class="reset1 btn btn-default">Reset</button></th>
           </tr>
-        <% end %>
+          <tr>
+            <td>Oxycodone 5 mg</td>
+            <td>60</td>
+            <th><button class="start2 btn btn-default">Start</button>
+            <button class="stop2 btn btn-default">Stop</button>
+            <button class="reset2 btn btn-default">Reset</button></th>
+          </tr>
+          <tr>
+            <td>Tramadol 50 mg</td>
+              <td>60</td>
+              <th><button class="start3 btn btn-default">Start</button>
+              <button class="stop3 btn btn-default">Stop</button>
+              <button class="reset3 btn btn-default">Reset</button></th>
+          </tr>
       </tbody>
     </table>
 
+<!--CLOCK 1 -->
   <h4><%= @string1 %></h4><br>
   <div class="clock_1">
   <script type="text/javascript">
-    var clock = $('.clock_1').FlipClock(gon.myNum1, {
-    countdown: true,
-        clockFace: 'MinuteCounter',
-    });
+  var clock1;
+  var time = 60*60;
+
+  $(document).ready(function() {
+
+    clock1 = $('.clock_1').FlipClock(time, {
+          clockFace: 'MinuteCounter',
+          countdown: true,
+          autoStart: false,
+          callbacks: {
+            start: function() {
+              $('.message').html('The clock has started!');
+            }
+          }
+      });
+      $('.start1').click(function(e) {
+        clock1.setTime(time);
+        clock1.start();
+      });
+      $('.stop1').click(function(e) {
+        clock1.setTime(0);
+      });
+      $('.reset1').click(function(e) {
+        clock1.setTime(time);
+      });
+  });
 </script></div><br>
+
+
+<!--CLOCK 2 -->
 
 <h4><%= @string2 %></h4><br>
 <div class="clock_2">
 <script type="text/javascript">
-var clock = $('.clock_2').FlipClock(gon.myNum2, {
-countdown: true,
-clockFace: 'MinuteCounter',
+var clock2;
+var time = 60*60;
+
+$(document).ready(function() {
+
+  clock2 = $('.clock_2').FlipClock(time, {
+        clockFace: 'MinuteCounter',
+        countdown: true,
+        autoStart: false,
+        callbacks: {
+          start: function() {
+            $('.message').html('The clock has started!');
+          }
+        }
+    });
+    $('.start2').click(function(e) {
+      clock2.setTime(time);
+      clock2.start();
+    });
+    $('.stop2').click(function(e) {
+      clock2.setTime(0);
+    });
+    $('.reset2').click(function(e) {
+      clock2.setTime(time);
+    });
 });
 </script></div><br>
 
+
+<!--CLOCK 3 -->
 <h4><%= @string3 %></h4><br>
 <div class="clock_3">
 <script type="text/javascript">
-var clock = $('.clock_3').FlipClock(gon.myNum3, {
-countdown: true,
-clockFace: 'MinuteCounter',
+var clock3;
+var time = 60*60;
+
+$(document).ready(function() {
+
+  clock3 = $('.clock_3').FlipClock(time, {
+        clockFace: 'MinuteCounter',
+        countdown: true,
+        autoStart: false,
+        callbacks: {
+          start: function() {
+            $('.message').html('The clock has started!');
+          }
+        }
+    });
+    $('.start3').click(function(e) {
+      clock3.setTime(time);
+      clock3.start();
+    });
+    $('.stop3').click(function(e) {
+      clock3.setTime(0);
+    });
+    $('.reset3').click(function(e) {
+      clock3.setTime(time);
+    });
 });
-</script></div>
+</script></div><br>
 
 </div></p>
     <script src="/vendor/assets/javascripts/libs/jquery.js"></script>
         <script src="/vendor/assets/javascripts/flipclock/flipclock.min.js"></script>
-    <a class="btn btn-default" href="/stopwatches/new" role="button">Edit Stopwatches</a>
     <a class="btn btn-default" href="/home/index" role="button">Back</a>
 </body>
