@@ -7,6 +7,37 @@
     <div class="panel-heading"><h1>Stopwatch</h1></div>
     <br>
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Time</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @medicines.each do |medicine| %>
+          <tr>
+            <td><%= medicine.Name %></td>
+            <td><%= medicine.time %></td>
+            <td><%= link_to '1' %></td>
+              <% if '1'
+                @string1 = medicine.Name
+              end %>
+            <td><%= link_to '2' %></td>
+            <% if '2'
+              @string2 = medicine.Name
+            end %>
+            <td><%= link_to '3' %></td>
+            <% if '3'
+              @string3 = medicine.Name
+            end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
   <h4><%= @string1 %></h4><br>
   <div class="clock_1">
   <script type="text/javascript">
