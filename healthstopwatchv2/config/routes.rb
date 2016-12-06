@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'home/index'
-
   resources :medicines
   resources :stopwatches
   root 'home#index'
