@@ -26,14 +26,14 @@
           </tr>
           <tr>
             <td>Oxycodone 5 mg</td>
-            <td>60</td>
+            <td>30</td>
             <th><button class="start2 btn btn-default">Start</button>
             <button class="stop2 btn btn-default">Stop</button>
             <button class="reset2 btn btn-default">Reset</button></th>
           </tr>
           <tr>
             <td>Tramadol 50 mg</td>
-              <td>60</td>
+              <td>45</td>
               <th><button class="start3 btn btn-default">Start</button>
               <button class="stop3 btn btn-default">Stop</button>
               <button class="reset3 btn btn-default">Reset</button></th>
@@ -80,11 +80,11 @@
 <div class="clock_2">
 <script type="text/javascript">
 var clock2;
-var time = 60*60;
+var time2 = 30*60;
 
 $(document).ready(function() {
 
-  clock2 = $('.clock_2').FlipClock(time, {
+  clock2 = $('.clock_2').FlipClock(time2, {
         clockFace: 'MinuteCounter',
         countdown: true,
         autoStart: false,
@@ -95,14 +95,14 @@ $(document).ready(function() {
         }
     });
     $('.start2').click(function(e) {
-      clock2.setTime(time);
+      clock2.setTime(time2);
       clock2.start();
     });
     $('.stop2').click(function(e) {
       clock2.setTime(0);
     });
     $('.reset2').click(function(e) {
-      clock2.setTime(time);
+      clock2.setTime(time2);
     });
 });
 </script></div><br>
@@ -113,11 +113,11 @@ $(document).ready(function() {
 <div class="clock_3">
 <script type="text/javascript">
 var clock3;
-var time = 60*60;
+var time3 = 45*60;
 
 $(document).ready(function() {
 
-  clock3 = $('.clock_3').FlipClock(time, {
+  clock3 = $('.clock_3').FlipClock(time3, {
         clockFace: 'MinuteCounter',
         countdown: true,
         autoStart: false,
@@ -128,14 +128,14 @@ $(document).ready(function() {
         }
     });
     $('.start3').click(function(e) {
-      clock3.setTime(time);
+      clock3.setTime(time3);
       clock3.start();
     });
     $('.stop3').click(function(e) {
       clock3.setTime(0);
     });
     $('.reset3').click(function(e) {
-      clock3.setTime(time);
+      clock3.setTime(time3);
     });
 });
 </script></div><br>
